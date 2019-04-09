@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <weui-button>按钮</weui-button>
+    <weui-button type="primary">按钮</weui-button>
+    <weui-button type="warn">按钮</weui-button>
+    <weui-button type="primary" disabled>按钮</weui-button>
+    <weui-button type="primary">按钮</weui-button>
+    <weui-button size="mini">按钮</weui-button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import WeuiButton from './components/Button/Button.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    WeuiButton,
+
+  },
+  mounted() {
+    this.$toast({ message: '已完成' });
   },
 };
+
 </script>
 
 <style lang="scss">
