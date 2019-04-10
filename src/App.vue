@@ -60,7 +60,10 @@
         </div>
       </template>
     </weui-panel>
-
+    <weui-button type="primary" @click="asShow = !asShow">按钮</weui-button>
+    <weui-action-sheet :show.sync="asShow" :menus="menus" :actions="actions">
+      <template slot="title">这是一个标题，可以为一行或者两行。</template>
+    </weui-action-sheet>
   </div>
 </template>
 
@@ -71,6 +74,7 @@ import WeuiDialog from './components/Dialog/Dialog.vue';
 import WeuiProgress from './components/Progress/Progress.vue';
 import WeuiPreview from './components/Preview/Preview.vue';
 import WeuiPanel from './components/Panel/Panel.vue';
+import WeuiActionSheet from './components/ActionSheet/ActionSheet.vue';
 
 export default {
   name: 'app',
@@ -81,6 +85,7 @@ export default {
     WeuiProgress,
     WeuiPreview,
     WeuiPanel,
+    WeuiActionSheet,
   },
   data() {
     return {
@@ -101,6 +106,17 @@ export default {
       }, {
         title: '标题三',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道',
+      }],
+      asShow: true,
+      menus: [{
+        text: '示例菜单',
+      }, {
+        text: '示例菜单',
+      }, {
+        text: '示例菜单',
+      }],
+      actions: [{
+        text: '取消',
       }],
     };
   },
