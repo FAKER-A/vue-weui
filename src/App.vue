@@ -17,6 +17,15 @@
       <template slot="body">我是内容</template>
     </weui-dialog>
     <weui-progress :percent="80" ></weui-progress>
+    <weui-preview :bodyData="bodyData">
+      <template slot="header">
+        <label class="weui-form-preview__label">付款金额</label>
+        <em class="weui-form-preview__value">¥2400.00</em>
+      </template>
+      <template slot="footer">
+        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
+      </template>
+    </weui-preview>
   </div>
 </template>
 
@@ -25,6 +34,7 @@ import WeuiButton from './components/Button/Button.vue';
 import WeuiLoadmore from './components/Loadmore/Loadmore.vue';
 import WeuiDialog from './components/Dialog/Dialog.vue';
 import WeuiProgress from './components/Progress/Progress.vue';
+import WeuiPreview from './components/Preview/Preview.vue';
 
 export default {
   name: 'app',
@@ -33,10 +43,18 @@ export default {
     WeuiLoadmore,
     WeuiDialog,
     WeuiProgress,
+    WeuiPreview,
   },
   data() {
     return {
       dialog1: true,
+      bodyData: [{
+        label: 'lisheng',
+        value: '前端',
+      }, {
+        label: '王晨',
+        value: '后端',
+      }],
     };
   },
   mounted() {
