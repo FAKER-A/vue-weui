@@ -64,6 +64,14 @@
     <weui-action-sheet :show.sync="asShow" :menus="menus" :actions="actions">
       <template slot="title">这是一个标题，可以为一行或者两行。</template>
     </weui-action-sheet>
+    <weui-navbar v-model="navActive">
+      <weui-navbar-item label="qq飞车" name="feiche">
+        <div>我是飞车</div>
+      </weui-navbar-item>
+      <weui-navbar-item label="英雄联盟" name="lol">
+        <div>我是英雄联盟</div>
+      </weui-navbar-item>
+    </weui-navbar>
   </div>
 </template>
 
@@ -75,6 +83,8 @@ import WeuiProgress from './components/Progress/Progress.vue';
 import WeuiPreview from './components/Preview/Preview.vue';
 import WeuiPanel from './components/Panel/Panel.vue';
 import WeuiActionSheet from './components/ActionSheet/ActionSheet.vue';
+import WeuiNavbar from './components/Navbar/Navbar.vue';
+import WeuiNavbarItem from './components/Navbar/NavbarItem.vue';
 
 export default {
   name: 'app',
@@ -86,6 +96,8 @@ export default {
     WeuiPreview,
     WeuiPanel,
     WeuiActionSheet,
+    WeuiNavbar,
+    WeuiNavbarItem,
   },
   data() {
     return {
@@ -107,7 +119,7 @@ export default {
         title: '标题三',
         desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道',
       }],
-      asShow: true,
+      asShow: false,
       menus: [{
         text: '示例菜单',
       }, {
@@ -118,6 +130,7 @@ export default {
       actions: [{
         text: '取消',
       }],
+      navActive: 'lol',
     };
   },
   mounted() {
