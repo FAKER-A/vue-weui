@@ -1,5 +1,6 @@
 <template>
   <button
+    @click="buttonClick"
     :class="classes">
     <slot></slot>
   </button>
@@ -41,6 +42,11 @@ export default {
     },
     classes() {
       return [this.classPre, this.typeClass, this.disabledClass, this.sizeClass];
+    },
+  },
+  methods: {
+    buttonClick(e) {
+      this.$emit('click', e);
     },
   },
 };
