@@ -72,6 +72,8 @@
         <div>我是英雄联盟</div>
       </weui-navbar-item>
     </weui-navbar>
+    <weui-tabber :active.sync="tabberActive" :menus="tabbermenus">
+    </weui-tabber>
   </div>
 </template>
 
@@ -85,6 +87,7 @@ import WeuiPanel from './components/Panel/Panel.vue';
 import WeuiActionSheet from './components/ActionSheet/ActionSheet.vue';
 import WeuiNavbar from './components/Navbar/Navbar.vue';
 import WeuiNavbarItem from './components/Navbar/NavbarItem.vue';
+import WeuiTabber from './components/Tabbar/Tabbar.vue';
 
 export default {
   name: 'app',
@@ -98,6 +101,7 @@ export default {
     WeuiActionSheet,
     WeuiNavbar,
     WeuiNavbarItem,
+    WeuiTabber,
   },
   data() {
     return {
@@ -131,6 +135,18 @@ export default {
         text: '取消',
       }],
       navActive: 'lol',
+      tabberActive: 'qq',
+      tabbermenus: [{
+        name: 'weixin',
+        label: '微信',
+      }, {
+        name: 'qq',
+        label: 'QQ',
+      }, {
+        name: 'feixin',
+        label: '飞信',
+      }],
+
     };
   },
   mounted() {
