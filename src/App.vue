@@ -10,18 +10,31 @@
     <weui-loadmore type="noData"></weui-loadmore>
     <weui-loadmore type="dot"></weui-loadmore>
     <weui-loadmore type="noData">没有数据哦～～</weui-loadmore>
+    <weui-dialog
+      :show.sync="dialog1"
+      noCancel>
+      <template slot="title">我是标题</template>
+      <template slot="body">我是内容</template>
+    </weui-dialog>
   </div>
 </template>
 
 <script>
 import WeuiButton from './components/Button/Button.vue';
 import WeuiLoadmore from './components/Loadmore/Loadmore.vue';
+import WeuiDialog from './components/Dialog/Dialog.vue';
 
 export default {
   name: 'app',
   components: {
     WeuiButton,
     WeuiLoadmore,
+    WeuiDialog,
+  },
+  data() {
+    return {
+      dialog1: true,
+    };
   },
   mounted() {
     this.$toast({ status: 'loading', message: '已完成' });
