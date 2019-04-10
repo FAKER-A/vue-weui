@@ -9,6 +9,7 @@
 </template>
 <script>
 export default {
+  name: 'WeuiToast',
   props: {
     status: {
       type: String,
