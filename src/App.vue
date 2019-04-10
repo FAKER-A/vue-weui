@@ -26,6 +26,41 @@
         <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
       </template>
     </weui-preview>
+    <weui-panel type="text" :list="list" @rowClick="rowClick">
+      <template slot="header">
+        文字组合列表
+      </template>
+    </weui-panel>
+
+    <weui-panel type="appmsg" :list="list" @rowClick="rowClick">
+      <template slot="header">
+        图文组合列表
+      </template>
+    </weui-panel>
+
+    <weui-panel type="smallAppmsg" :list="list" @rowClick="rowClick">
+      <template slot="header">
+        小图文组合列表
+      </template>
+    </weui-panel>
+
+    <weui-panel type="slot" :list="list">
+      <template slot="header">
+        自定义列表
+      </template>
+      <template slot="body" slot-scope="{ row }">
+        <div class="weui-media-box weui-media-box_text">
+            <h4 class="weui-media-box__title">{{ row.title }}</h4>
+            <p class="weui-media-box__desc">{{ row.desc }}</p>
+            <ul class="weui-media-box__info">
+                <li class="weui-media-box__info__meta">文字来源</li>
+                <li class="weui-media-box__info__meta">时间</li>
+                <li class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</li>
+            </ul>
+        </div>
+      </template>
+    </weui-panel>
+
   </div>
 </template>
 
@@ -35,6 +70,7 @@ import WeuiLoadmore from './components/Loadmore/Loadmore.vue';
 import WeuiDialog from './components/Dialog/Dialog.vue';
 import WeuiProgress from './components/Progress/Progress.vue';
 import WeuiPreview from './components/Preview/Preview.vue';
+import WeuiPanel from './components/Panel/Panel.vue';
 
 export default {
   name: 'app',
@@ -44,6 +80,7 @@ export default {
     WeuiDialog,
     WeuiProgress,
     WeuiPreview,
+    WeuiPanel,
   },
   data() {
     return {
@@ -55,22 +92,29 @@ export default {
         label: '王晨',
         value: '后端',
       }],
+      list: [{
+        title: '标题一',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道',
+      }, {
+        title: '标题二',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道',
+      }, {
+        title: '标题三',
+        desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道',
+      }],
     };
   },
   mounted() {
     this.$toast({ status: 'loading', message: '已完成' });
+  },
+  methods: {
+    rowClick({ row, index }) {
+      console.log(row, index);
+    },
   },
 };
 
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
