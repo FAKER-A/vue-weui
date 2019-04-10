@@ -16,6 +16,7 @@
       <template slot="title">我是标题</template>
       <template slot="body">我是内容</template>
     </weui-dialog>
+    <weui-progress :percent="80" ></weui-progress>
   </div>
 </template>
 
@@ -23,6 +24,7 @@
 import WeuiButton from './components/Button/Button.vue';
 import WeuiLoadmore from './components/Loadmore/Loadmore.vue';
 import WeuiDialog from './components/Dialog/Dialog.vue';
+import WeuiProgress from './components/Progress/Progress.vue';
 
 export default {
   name: 'app',
@@ -30,6 +32,7 @@ export default {
     WeuiButton,
     WeuiLoadmore,
     WeuiDialog,
+    WeuiProgress,
   },
   data() {
     return {
