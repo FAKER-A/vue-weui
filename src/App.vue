@@ -19,7 +19,7 @@ export default {
 
   },
   mounted() {
-    this.$toast({ message: '已完成' });
+    this.$toast({ status: 'loading', message: '已完成' });
   },
 };
 

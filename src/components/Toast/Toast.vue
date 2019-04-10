@@ -2,7 +2,7 @@
   <div id="toast">
     <div class="weui-mask_transparent"></div>
     <div class="weui-toast">
-      <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+      <i class="weui-icon_toast" :class="iconClass"></i>
       <p class="weui-toast__content">{{ message }}</p>
     </div>
   </div>
@@ -21,6 +21,20 @@ export default {
     timeout: {
       type: Number,
       default: 3000,
+    },
+  },
+  computed: {
+    iconClass() {
+      let classArr = '';
+      switch (this.status) {
+        case 'loading':
+          classArr = 'weui-loading';
+          break;
+        case 'success':
+        default:
+          classArr = 'weui-icon-success-no-circle';
+      }
+      return classArr;
     },
   },
 };
