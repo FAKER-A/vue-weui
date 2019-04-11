@@ -34,7 +34,6 @@ export default {
   created() {
     this.$on('insertTab', (tab) => {
       this.tabs.push(tab);
-      console.log(this.tabs);
     });
   },
   methods: {
