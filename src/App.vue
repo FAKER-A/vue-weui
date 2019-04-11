@@ -74,6 +74,45 @@
     </weui-navbar>
     <weui-tabber :active.sync="tabberActive" :menus="tabbermenus">
     </weui-tabber>
+    <weui-cells>
+      <template slot="title">cells 和 cell 的例子</template>
+      <template slot="cells">
+        <weui-cell>
+      <!-- <template slot="hd">
+        <p>标题文字</p>
+      </template> -->
+      <template slot="bd">
+        <p>cell standard</p>
+      </template>
+      <template slot="ft">
+        <div class="weui-cell__ft">说明文字</div>
+      </template>
+    </weui-cell>
+    <weui-cell>
+      <template slot="hd">
+        <img src="" alt="" style="width:20px;margin-right:5px;display:block">
+      </template>
+      <template slot="bd">
+        <p>标题文字</p>
+      </template>
+      <template slot="ft">
+        <div class="weui-cell__ft">说明文字</div>
+      </template>
+    </weui-cell>
+    <weui-cell access>
+      <!-- <template slot="hd">
+        <p>标题文字</p>
+      </template> -->
+      <template slot="bd">
+        <p>标题文字</p>
+      </template>
+      <template slot="ft">
+        说明文字
+      </template>
+    </weui-cell>
+      </template>
+    </weui-cells>
+
   </div>
 </template>
 
@@ -88,6 +127,8 @@ import WeuiActionSheet from './components/ActionSheet/ActionSheet.vue';
 import WeuiNavbar from './components/Navbar/Navbar.vue';
 import WeuiNavbarItem from './components/Navbar/NavbarItem.vue';
 import WeuiTabber from './components/Tabbar/Tabbar.vue';
+import WeuiCell from './components/Cell/Cell.vue';
+import WeuiCells from './components/Cell/Cells.vue';
 
 export default {
   name: 'app',
@@ -102,6 +143,8 @@ export default {
     WeuiNavbar,
     WeuiNavbarItem,
     WeuiTabber,
+    WeuiCell,
+    WeuiCells,
   },
   data() {
     return {
