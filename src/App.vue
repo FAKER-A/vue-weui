@@ -93,7 +93,7 @@
         <img src="" alt="" style="width:20px;margin-right:5px;display:block">
       </template>
       <template slot="bd">
-        <p>标题文字</p>
+        <p>标题文字 <weui-badge dot></weui-badge></p>
       </template>
       <template slot="ft">
         <div class="weui-cell__ft">说明文字</div>
@@ -104,7 +104,7 @@
         <p>标题文字</p>
       </template> -->
       <template slot="bd">
-        <p>标题文字</p>
+        <p>标题文字<weui-badge >new</weui-badge></p>
       </template>
       <template slot="ft">
         说明文字
@@ -129,6 +129,7 @@ import WeuiNavbarItem from './components/Navbar/NavbarItem.vue';
 import WeuiTabber from './components/Tabbar/Tabbar.vue';
 import WeuiCell from './components/Cell/Cell.vue';
 import WeuiCells from './components/Cell/Cells.vue';
+import WeuiBadge from './components/Badge/Badge.vue';
 
 export default {
   name: 'app',
@@ -145,6 +146,7 @@ export default {
     WeuiTabber,
     WeuiCell,
     WeuiCells,
+    WeuiBadge,
   },
   data() {
     return {
