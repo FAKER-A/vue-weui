@@ -112,7 +112,7 @@
     </weui-cell>
       </template>
     </weui-cells>
-
+    <weui-slider v-model="percent"></weui-slider>
   </div>
 </template>
 
@@ -130,6 +130,7 @@ import WeuiTabber from './components/Tabbar/Tabbar.vue';
 import WeuiCell from './components/Cell/Cell.vue';
 import WeuiCells from './components/Cell/Cells.vue';
 import WeuiBadge from './components/Badge/Badge.vue';
+import WeuiSlider from './components/Slider/Slider.vue';
 
 export default {
   name: 'app',
@@ -147,6 +148,7 @@ export default {
     WeuiCell,
     WeuiCells,
     WeuiBadge,
+    WeuiSlider,
   },
   data() {
     return {
@@ -191,7 +193,7 @@ export default {
         name: 'feixin',
         label: '飞信',
       }],
-
+      percent: 0,
     };
   },
   mounted() {
